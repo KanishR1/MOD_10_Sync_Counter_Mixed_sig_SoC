@@ -36,7 +36,7 @@ The MOD-10 synchronous counter has numerous applications such as digital clock, 
 The MOD-10 synchronous counter has a count range of 0 to 9. Because the counter is synchronous, the clock signal is sent to all of the flip flops at the same time. The MOD-10 synchronous counter is built with both analogue and digital circuitry. The analogue circuitry consists of the astable multivibrator and the AND gate implemented in CMOS. The astable multivibrator is built by cascading three inverters and using a resistor and capacitor to generate a pulse signal for the clock. The inverters act as a buffer, and the direction of the capacitor's charging and discharging plays an important role in switching the inverter's inputs and outputs. The digital circuitry of MOD - 10 is made up of four JK flipflops with synchronous clear. The truth table is written and reduced using the K-map to obtain the boolean functions for the input and output to the flipflops. Using the Boolean function, the Verilog code for the digital circuit is written. Finally, the analog and digital circuits are integrated to form a mixed signal circuit.
 
 ## Truth Table
-
+The truth table along with the excitation table for each flipflop is shown below:
 | Present State | Next State |J3 | K3 | J2 | K2 | J1 | K1 | J0 | K0 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------ | 
 | **q3 q2 q1 q0** | **Q3 Q2 Q1 Q0** | | | | | | | | |
@@ -56,6 +56,11 @@ The MOD-10 synchronous counter has a count range of 0 to 9. Because the counter 
 | 1 1 0 1 | x x x x |  x | x | x | x | x | x | x | x |
 | 1 1 1 0 | x x x x |  x | x | x | x | x | x | x | x |
 | 1 1 1 1 | x x x x |  x | x | x | x | x | x | x | x |
+
+J0 = K0 = 1 </br>
+J1 = q3'q0  ;  K1 = q0 </br>
+J2 = K2 = q0q1 </br>
+J3 = q0q1q2  ;  K3 = q0 </br>
 
 ## Software Used
 ### eSim
@@ -152,16 +157,17 @@ endmodule
 ## Steps to run this project
 1. Open a new terminal
 2. Clone this project using the following command:</br>
-```git clone https://github.com/Eyantra698Sumanto/XOR-XNOR-Gate.git ```</br>
+```git clone https://github.com/KanishR1/MOD_10_Sync_Counter_Mixed_sig_SoC.git ```</br>
 3. Change directory:</br>
-```cd eSim_project_files/xor_xnor```</br>
+```cd eSim_project_files/counter_jk_2 ```</br>
 4. Run ngspice:</br>
-```ngspice xor_xnor.cir.out```</br>
+```ngspice counter_jk_2.cir.out```</br>
 5. To run the project in eSim:
 
   - Run eSim</br>
   - Load the project</br>
   - Open eeSchema</br>
+
 ## Acknowlegdements
 1. FOSSEE, IIT Bombay
 2. Steve Hoover, Founder, Redwood EDA
@@ -169,7 +175,10 @@ endmodule
 4. Sumanto Kar, eSim Team, FOSSEE
 
 ## References
-1. Ahmad, Nabihah & Hasan, Rezaul. (2011). A new design of XOR-XNOR gates for low power application. 10.1109/ICEDSA.2011.5959039. 
-2. K. Ravali, N. R. Vijay, S. Jaggavarapu and R. Sakthivel, "Low power XOR gate design and its applications," 2017 Fourth International Conference on Signal Processing, Communication and Networking (ICSCN), 2017, pp. 1-4, doi: 10.1109/ICSCN.2017.8085699.
-3. https://github.com/Eyantra698Sumanto/Two-in-One-Low-power-XOR-XNOR-Gate.git
+1. Morris Mano & Michael D Ciletti, “Digital Design: With an Introduction to Verilog HDL, 5th Edition, Pearson Education, 2013
+2. Neil H.E. Weste, David Money Harris ―CMOS VLSI Design: A Circuits and Systems Perspective.
+3. https://skywater-pdk.readthedocs.io/en/main/
+4. https://www.homemade-circuits.com/cmos-astable-bistable-monostable-circuits-explained/
+5. https://www.youtube.com/watch?v=M8EqkE4G9IE&ab_channel=SimplyPut
+6. https://github.com/Eyantra698Sumanto/Two-in-One-Low-power-XOR-XNOR-Gate.git
 
