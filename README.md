@@ -39,7 +39,7 @@ The MOD-10 synchronous counter has a count range of 0 to 9. Because the counter 
 
 | Present State | Next State | J and K Values for each flip flop |
 | ------------- | ------------- | ------------- |
-| | q3  | q2 | q1  | q0 || | | Q3  | Q2 | Q1  | Q0 || || J0 | K0 | J1 | K1 | J2 | K2 | J3 | K3 ||
+| q3  | q2 | q1 | q0 | Q3  | Q2 | Q1  | Q0 | J0 | K0 | J1 | K1 | J2 | K2 | J3 | K3 |
 
 ## Software Used
 ### eSim
