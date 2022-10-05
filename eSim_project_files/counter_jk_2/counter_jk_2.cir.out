@@ -1,0 +1,115 @@
+* /home/kanish/esim/esim_tut/counter_jk_2/counter_jk_2.cir
+
+.lib "/usr/share/local/sky130_fd_pr/models/sky130.lib.spice" tt
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__diode_pw2nd_11v0.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__pnp.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__inductors.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__r+c.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__diode_pd2nw_11v0.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__linear.model.spice"
+xsc2 net-_sc1-pad1_ net-_sc1-pad2_ net-_sc2-pad3_ net-_sc2-pad3_ sky130_fd_pr__nfet_01v8_lvt 
+xsc3 net-_sc2-pad3_ net-_sc3-pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc6 j1 net-_sc1-pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc8 net-_sc10-pad1_ net-_sc1-pad2_ net-_sc8-pad3_ net-_sc8-pad3_ sky130_fd_pr__nfet_01v8_lvt 
+xsc9 net-_sc8-pad3_ net-_sc10-pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc12 j2k2 net-_sc10-pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc14 net-_sc13-pad1_ j2k2 net-_sc14-pad3_ net-_sc14-pad3_ sky130_fd_pr__nfet_01v8_lvt 
+xsc15 net-_sc14-pad3_ net-_sc15-pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc18 j3 net-_sc13-pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+v1 vdd gnd  dc 1.8
+v3  clear gnd pulse(1.8 0 0.1m 0.1m 0.1m 5m 25m)
+* s c m o d e
+* u9  clk_in clear ff_clock clr adc_bridge_2
+* u11  j2k2 net-_u11-pad2_ adc_bridge_1
+* u12  j3 net-_u12-pad2_ adc_bridge_1
+* u15  k1 net-_sc1-pad2_ dac_bridge_1
+* u16  qb3 net-_sc3-pad2_ dac_bridge_1
+* u17  q1 net-_sc10-pad2_ dac_bridge_1
+* u18  q2 net-_sc15-pad2_ dac_bridge_1
+* u19  j1 net-_u19-pad2_ adc_bridge_1
+* u21  clock plot_v1
+* u20  clear plot_v1
+* u3  ff_clock clr net-_u10-pad2_ net-_u10-pad2_ k1 ? jk_ff_sky130
+* u5  ff_clock clr net-_u19-pad2_ k1 q1 ? jk_ff_sky130
+* u7  ff_clock clr net-_u11-pad2_ net-_u11-pad2_ q2 ? jk_ff_sky130
+* u8  ff_clock clr net-_u12-pad2_ k1 q3 qb3 jk_ff_sky130
+v4 res_pwr_supply gnd  dc 3.3
+xsc20 net-_sc19-pad1_ net-_sc19-pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc22 net-_sc21-pad1_ net-_sc19-pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc26 clk_in net-_sc21-pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt 
+xsc19 net-_sc19-pad1_ net-_sc19-pad2_ vdd vdd sky130_fd_pr__pfet_01v8_lvt 
+xsc21 net-_sc21-pad1_ net-_sc19-pad1_ vdd vdd sky130_fd_pr__pfet_01v8_lvt 
+xsc25 clk_in net-_sc21-pad1_ vdd vdd sky130_fd_pr__pfet_01v8_lvt 
+xsc23 net-_sc21-pad1_ net-_sc19-pad2_ sky130_fd_pr__cap_mim_m3_1 W=1000 L=5000 MF=3000
+xsc24 clk_in net-_sc19-pad2_ res_pwr_supply sky130_fd_pr__res_generic_nd L=425 W=1
+xsc4 net-_sc1-pad1_ net-_sc3-pad2_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc1 net-_sc1-pad1_ net-_sc1-pad2_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc5 j1 net-_sc1-pad1_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc7 net-_sc10-pad1_ net-_sc1-pad2_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc11 j2k2 net-_sc10-pad1_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc13 net-_sc13-pad1_ j2k2 vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc17 j3 net-_sc13-pad1_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc10 net-_sc10-pad1_ net-_sc10-pad2_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+xsc16 net-_sc13-pad1_ net-_sc15-pad2_ vdd vdd sky130_fd_pr__pfet_01v8_hvt 
+* u24  v0 plot_v1
+* u25  v1 plot_v1
+* u26  v2 plot_v1
+* u27  v3 plot_v1
+* u10  vdd net-_u10-pad2_ adc_bridge_1
+* u1  k1 q1 q2 q3 v0 v1 v2 v3 dac_bridge_4
+* u2  ff_clock clock dac_bridge_1
+a1 [clk_in clear ] [ff_clock clr ] u9
+a2 [j2k2 ] [net-_u11-pad2_ ] u11
+a3 [j3 ] [net-_u12-pad2_ ] u12
+a4 [k1 ] [net-_sc1-pad2_ ] u15
+a5 [qb3 ] [net-_sc3-pad2_ ] u16
+a6 [q1 ] [net-_sc10-pad2_ ] u17
+a7 [q2 ] [net-_sc15-pad2_ ] u18
+a8 [j1 ] [net-_u19-pad2_ ] u19
+a9 [ff_clock ] [clr ] [net-_u10-pad2_ ] [net-_u10-pad2_ ] [k1 ] [? ] u3
+a10 [ff_clock ] [clr ] [net-_u19-pad2_ ] [k1 ] [q1 ] [? ] u5
+a11 [ff_clock ] [clr ] [net-_u11-pad2_ ] [net-_u11-pad2_ ] [q2 ] [? ] u7
+a12 [ff_clock ] [clr ] [net-_u12-pad2_ ] [k1 ] [q3 ] [qb3 ] u8
+a13 [vdd ] [net-_u10-pad2_ ] u10
+a14 [k1 q1 q2 q3 ] [v0 v1 v2 v3 ] u1
+a15 [ff_clock ] [clock ] u2
+* Schematic Name:                             adc_bridge_2, NgSpice Name: adc_bridge
+.model u9 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             adc_bridge_1, NgSpice Name: adc_bridge
+.model u11 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             adc_bridge_1, NgSpice Name: adc_bridge
+.model u12 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u15 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u16 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u17 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u18 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             adc_bridge_1, NgSpice Name: adc_bridge
+.model u19 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             jk_ff_sky130, NgSpice Name: jk_ff_sky130
+.model u3 jk_ff_sky130(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             jk_ff_sky130, NgSpice Name: jk_ff_sky130
+.model u5 jk_ff_sky130(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             jk_ff_sky130, NgSpice Name: jk_ff_sky130
+.model u7 jk_ff_sky130(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             jk_ff_sky130, NgSpice Name: jk_ff_sky130
+.model u8 jk_ff_sky130(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             adc_bridge_1, NgSpice Name: adc_bridge
+.model u10 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_4, NgSpice Name: dac_bridge
+.model u1 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u2 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+.tran 1e-03 50e-03 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(clock)+30 v(clear)+24 v(v0) v(v1)+6 v(v2)+12 v(v3)+18
+.endc
+.end

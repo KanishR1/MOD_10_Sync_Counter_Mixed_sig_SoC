@@ -1,0 +1,61 @@
+* /home/kanish/esim/esim_tut/counter_jk_2/counter_jk_2.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Wed Oct  5 18:39:26 2022
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+SC2  Net-_SC1-Pad1_ Net-_SC1-Pad2_ Net-_SC2-Pad3_ Net-_SC2-Pad3_ sky130_fd_pr__nfet_01v8_lvt		
+SC3  Net-_SC2-Pad3_ Net-_SC3-Pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC6  J1 Net-_SC1-Pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC8  Net-_SC10-Pad1_ Net-_SC1-Pad2_ Net-_SC8-Pad3_ Net-_SC8-Pad3_ sky130_fd_pr__nfet_01v8_lvt		
+SC9  Net-_SC8-Pad3_ Net-_SC10-Pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC12  J2K2 Net-_SC10-Pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC14  Net-_SC13-Pad1_ J2K2 Net-_SC14-Pad3_ Net-_SC14-Pad3_ sky130_fd_pr__nfet_01v8_lvt		
+SC15  Net-_SC14-Pad3_ Net-_SC15-Pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC18  J3 Net-_SC13-Pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+v1  Vdd gnd DC		
+v3  Clear gnd pulse		
+scmode1  SKY130mode		
+U9  clk_in Clear ff_Clock clr adc_bridge_2		
+U11  J2K2 Net-_U11-Pad2_ adc_bridge_1		
+U12  J3 Net-_U12-Pad2_ adc_bridge_1		
+U15  K1 Net-_SC1-Pad2_ dac_bridge_1		
+U16  Qb3 Net-_SC3-Pad2_ dac_bridge_1		
+U17  Q1 Net-_SC10-Pad2_ dac_bridge_1		
+U18  Q2 Net-_SC15-Pad2_ dac_bridge_1		
+U19  J1 Net-_U19-Pad2_ adc_bridge_1		
+U21  Clock plot_v1		
+U20  Clear plot_v1		
+U3  ff_Clock clr Net-_U10-Pad2_ Net-_U10-Pad2_ K1 ? jk_ff_sky130		
+U5  ff_Clock clr Net-_U19-Pad2_ K1 Q1 ? jk_ff_sky130		
+U7  ff_Clock clr Net-_U11-Pad2_ Net-_U11-Pad2_ Q2 ? jk_ff_sky130		
+U8  ff_Clock clr Net-_U12-Pad2_ K1 Q3 Qb3 jk_ff_sky130		
+v4  Res_pwr_supply gnd DC		
+SC20  Net-_SC19-Pad1_ Net-_SC19-Pad2_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC22  Net-_SC21-Pad1_ Net-_SC19-Pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC26  clk_in Net-_SC21-Pad1_ gnd gnd sky130_fd_pr__nfet_01v8_lvt		
+SC19  Net-_SC19-Pad1_ Net-_SC19-Pad2_ Vdd Vdd sky130_fd_pr__pfet_01v8_lvt		
+SC21  Net-_SC21-Pad1_ Net-_SC19-Pad1_ Vdd Vdd sky130_fd_pr__pfet_01v8_lvt		
+SC25  clk_in Net-_SC21-Pad1_ Vdd Vdd sky130_fd_pr__pfet_01v8_lvt		
+SC23  Net-_SC21-Pad1_ Net-_SC19-Pad2_ sky130_fd_pr__cap_mim_m3_1		
+SC24  clk_in Net-_SC19-Pad2_ Res_pwr_supply sky130_fd_pr__res_generic_nd		
+SC4  Net-_SC1-Pad1_ Net-_SC3-Pad2_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC1  Net-_SC1-Pad1_ Net-_SC1-Pad2_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC5  J1 Net-_SC1-Pad1_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC7  Net-_SC10-Pad1_ Net-_SC1-Pad2_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC11  J2K2 Net-_SC10-Pad1_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC13  Net-_SC13-Pad1_ J2K2 Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC17  J3 Net-_SC13-Pad1_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC10  Net-_SC10-Pad1_ Net-_SC10-Pad2_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+SC16  Net-_SC13-Pad1_ Net-_SC15-Pad2_ Vdd Vdd sky130_fd_pr__pfet_01v8_hvt		
+U24  V0 plot_v1		
+U25  V1 plot_v1		
+U26  V2 plot_v1		
+U27  V3 plot_v1		
+U10  Vdd Net-_U10-Pad2_ adc_bridge_1		
+U1  K1 Q1 Q2 Q3 V0 V1 V2 V3 dac_bridge_4		
+U2  ff_Clock Clock dac_bridge_1		
+
+.end
