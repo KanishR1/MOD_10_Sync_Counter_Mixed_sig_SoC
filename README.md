@@ -31,34 +31,16 @@ The MOD-10 synchronous counter has numerous applications such as digital clock, 
 ![image](https://user-images.githubusercontent.com/58599984/152688334-fa3ad04d-e142-4dd1-a0cf-00fd13ca2d9e.png)
 ## Reference Waveform
 ![image](https://user-images.githubusercontent.com/58599984/152688402-29877a15-deb3-4dee-9bcc-2313851182de.png)
-## Circuit Details
-As shown in the figure we have two cross coupled
-circuits of PMOS logic and NMOS logic.
-</br>
-On the PMOS logic we are getting the output as XOR
-while in the NMOS block we get the output as XNOR.
-</br>
-The transistors M4 and M3 behave as a pass transistor
-and pass the output of M1, M2 and M5, M6
-respectively.
-</br>
 
-The advantage of the above circuit is that it uses only
-6 transistors and gives both outputs of XOR and
-XNOR while the general circuit uses 8 transistors with
-only one output either XOR or XNOR.
-</br>
-This way it consumes less space and less power and is
-efficient in many ways.
-</br>
+## Circuit Details
+The MOD-10 synchronous counter has a count range of 0 to 9. Because the counter is synchronous, the clock signal is sent to all of the flip flops at the same time. The MOD-10 synchronous counter is built with both analogue and digital circuitry. The analogue circuitry consists of the astable multivibrator and the AND gate implemented in CMOS. The astable multivibrator is built by cascading three inverters and using a resistor and capacitor to generate a pulse signal for the clock. The inverters act as a buffer, and the direction of the capacitor's charging and discharging plays an important role in switching the inverter's inputs and outputs. The digital circuitry of MOD - 10 is made up of four JK flipflops with synchronous clear. The truth table is written and reduced using the K-map to obtain the boolean functions for the input and output to the flipflops. Using the Boolean function, the Verilog code for the digital circuit is written. Finally, the analog and digital circuits are integrated to form a mixed signal circuit.
+
 ## Truth Table
 
-| Input A  | Input B | Output XOR  | Output XNOR |
-| ------------- | ------------- | ------------- | ------------- |
-| 0  | 0 | 0  | 1 |
-| 0  | 1 | 1| 0|
-| 1  | 0 |1|0|
-| 1 | 1 |0|1|
+| Present State | Next State | J and K Values for each flip flop |
+| ------------- | ------------- | ------------- |
+| | q3  | q2 | q1  | q0 || | | Q3  | Q2 | Q1  | Q0 || || J0 | K0 | J1 | K1 | J2 | K2 | J3 | K3 ||
+
 ## Software Used
 ### eSim
 It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electronic circuit simulation. It is made by the combination of two software namely NgSpice and KiCAD.
