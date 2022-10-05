@@ -37,9 +37,25 @@ The MOD-10 synchronous counter has a count range of 0 to 9. Because the counter 
 
 ## Truth Table
 
-| Present State | Next State |J0 | K0 | J1 | K1 | J2 | K2 | J3 | K3 |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| q3 q2 q1 q0 | Q3 Q2 Q1 Q0 | ||||||||||
+| Present State | Next State |J3 | K3 | J2 | K2 | J1 | K1 | J0 | K0 |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------ | 
+| **q3 q2 q1 q0** | **Q3 Q2 Q1 Q0** | | | | | | | | |
+| 0 0 0 0 | 0 0 0 1 |  0 | x | 0 | x | 0 | x | 1 | x |
+| 0 0 0 1 | 0 0 1 0 |  0 | x | 0 | x | 1 | x | x | 1 |
+| 0 0 1 0 | 0 0 1 1 |  0 | x | 0 | x | x | 0 | 1 | x |
+| 0 0 1 1 | 0 1 0 0 |  0 | x | 1 | x | x | 1 | x | 1 |
+| 0 1 0 0 | 0 1 0 1 |  0 | x | x | 0 | 0 | x | 1 | x |
+| 0 1 0 1 | 0 1 1 0 |  0 | x | x | 0 | 1 | x | x | 1 |
+| 0 1 1 0 | 0 1 1 1 |  0 | x | x | 0 | x | 0 | 1 | x |
+| 0 1 1 1 | 1 0 0 0 |  1 | x | x | 1 | x | 1 | x | 1 |
+| 1 0 0 0 | 1 0 0 1 |  x | 0 | 0 | x | 0 | x | 1 | x |
+| 1 0 0 1 | 0 0 0 0 |  x | 1 | 0 | x | 0 | x | x | 1 |
+| 1 0 1 0 | x x x x |  x | x | x | x | x | x | x | x |
+| 1 0 1 1 | x x x x |  x | x | x | x | x | x | x | x |
+| 1 1 0 0 | x x x x |  x | x | x | x | x | x | x | x |
+| 1 1 0 1 | x x x x |  x | x | x | x | x | x | x | x |
+| 1 1 1 0 | x x x x |  x | x | x | x | x | x | x | x |
+| 1 1 1 1 | x x x x |  x | x | x | x | x | x | x | x |
 
 ## Software Used
 ### eSim
@@ -111,8 +127,7 @@ endmodule
 
 ![image](https://user-images.githubusercontent.com/58599984/156439624-353c14ac-4216-4aa7-8207-64f4c287b2b7.png)
 ![image](https://user-images.githubusercontent.com/58599984/156439590-9371c62f-384b-42f8-9403-9704429d752d.png)
-## GAW Plots
-![image](https://user-images.githubusercontent.com/58599984/156439535-edb78fc7-a6e6-4178-864a-7cea5ea37e23.png)
+
 ## Steps to run generate NgVeri Model
 1. Open eSim
 2. Run NgVeri-Makerchip 
