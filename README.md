@@ -84,7 +84,6 @@ https://www.veripool.org/verilator/
 The following is the schematic in drawn in eSim:
 
 **Power Supply**</br>
-
 ![pwr](https://user-images.githubusercontent.com/88330171/194203839-5ac37993-82b3-467f-a961-c55915a366cb.png)
 
 **Astable Multivibrator Circuit**
