@@ -1,5 +1,6 @@
 # Mixed Signal SoC design Marathon using eSim & SKY130
 # MOD-10 Synchronous Counter
+## Table of Contents
 - [Abstract](#abstract)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
 - [Reference Waveform](#reference-waveform)
