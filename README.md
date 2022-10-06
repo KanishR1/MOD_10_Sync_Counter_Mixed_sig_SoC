@@ -82,15 +82,42 @@ https://www.veripool.org/verilator/
 
 ## Circuit Diagram in eSim
 The following is the schematic in drawn in eSim:
+
 **Power Supply**
 ![pwr](https://user-images.githubusercontent.com/88330171/194203839-5ac37993-82b3-467f-a961-c55915a366cb.png)
+
 **Astable Multivibrator Circuit**
 ![astable_multivibrator](https://user-images.githubusercontent.com/88330171/194203820-905691fb-ee55-44bd-af03-8cb9e864f110.png)
+
 **Mixed Signal MOD-10 Synchronous Counter using JK Flipflop with Synchronous Clear** 
-![MOD_10_counter](https://user-images.githubusercontent.com/88330171/194203798-181f92e5-75dc-4972-8cfe-1c32ffde51a2.png)
+
+![MOD_10_Counter](https://user-images.githubusercontent.com/88330171/194207207-d79991c6-5b7d-4ee9-bd3d-20a79540cb37.png)
 
 ## Verilog Code
-![image](https://user-images.githubusercontent.com/58599984/156445908-1af8255c-d17c-4275-8e24-ee65c96af66a.png)
+```
+module jk_ff_sky130(j,k,clk,clr,q,qb);
+	input clk,clr,j,k;
+	output reg q;
+	output qb;
+	
+	always @(posedge clk) begin
+		if (~clr)
+			q<=0;
+		else begin
+			case({j,k})
+				2'b00 : q<=q;
+				2'b01 : q<=0;
+				2'b10 : q<=1;
+				2'b11 : q<=~q;
+			endcase
+		end
+	end
+	assign qb = ~q;
+endmodule
+
+
+```
+
 
 ## Makerchip
 ```
@@ -141,6 +168,11 @@ endmodule
 
 ```
 ## Makerchip Plots
+
+**JK Flipflop Output**
+![makerchip plot](https://user-images.githubusercontent.com/88330171/194207229-9dff4bce-01be-42b8-bd1a-a8a29998302d.png)
+
+The plot here depicts the functionality of the positive edge triggered JK flipflop with synchronous clear for the inputs J = 1 and K = 1.
 
 
 ## Netlists
