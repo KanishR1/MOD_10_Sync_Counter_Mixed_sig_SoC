@@ -163,7 +163,7 @@ The following waveforms are the ngspice plots for the designed circuit :
 ![V2](https://user-images.githubusercontent.com/88330171/194203816-00e7ffdb-318b-4244-b0ea-174159930ed0.png)
 **Q3 Output**
 ![V3](https://user-images.githubusercontent.com/88330171/194203817-c58e6c1f-f3aa-403e-b111-c932141442c3.png)
-**Combined Waveform**
+**Combined Waveform** </br>
 ![ng_spice](https://user-images.githubusercontent.com/88330171/194203837-6d4b0ee1-72b1-4728-b616-96b97f78b0a8.png)
 
 ## Steps to run generate NgVeri Model
