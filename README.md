@@ -81,8 +81,13 @@ It is a tool which converts Verilog code to C++ objects. Refer:
 https://www.veripool.org/verilator/
 
 ## Circuit Diagram in eSim
-The following is the schematic in eSim:
-![image](https://user-images.githubusercontent.com/58599984/156439856-079de481-b68d-4955-b9c9-6ff310c5de58.png)
+The following is the schematic in drawn in eSim:
+**Power Supply**
+![pwr](https://user-images.githubusercontent.com/88330171/194203839-5ac37993-82b3-467f-a961-c55915a366cb.png)
+**Astable Multivibrator Circuit**
+![astable_multivibrator](https://user-images.githubusercontent.com/88330171/194203820-905691fb-ee55-44bd-af03-8cb9e864f110.png)
+**Mixed Signal MOD-10 Synchronous Counter using JK Flipflop with Synchronous Clear** 
+![MOD_10_counter](https://user-images.githubusercontent.com/88330171/194203798-181f92e5-75dc-4972-8cfe-1c32ffde51a2.png)
 
 ## Verilog Code
 ![image](https://user-images.githubusercontent.com/58599984/156445908-1af8255c-d17c-4275-8e24-ee65c96af66a.png)
