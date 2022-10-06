@@ -28,15 +28,18 @@
 The MOD-10 synchronous counter has numerous applications such as digital clock, frequency divider, D2A, and so on. MOD-10 counters are also referred to as Decade counters or BCD counters. In this project, I used a JK flipflop as a counter and an astable multivibrator to generate the clock signal.
 
 ## Reference Circuit Diagram
-![image](https://user-images.githubusercontent.com/58599984/152688334-fa3ad04d-e142-4dd1-a0cf-00fd13ca2d9e.png)
+![ref_ckt](https://user-images.githubusercontent.com/88330171/194209930-82e07232-5b18-433f-8963-aee1c5e36fad.jpg)
+
 ## Reference Waveform
-![image](https://user-images.githubusercontent.com/58599984/152688402-29877a15-deb3-4dee-9bcc-2313851182de.png)
+The waveform is simulated using EDA playground (https://www.edaplayground.com/)
+![ref_wave](https://user-images.githubusercontent.com/88330171/194209938-b496d5ce-928c-48a9-9696-70dc3244f8db.png)
 
 ## Circuit Details
 The MOD-10 synchronous counter has a count range of 0 to 9. Because the counter is synchronous, the clock signal is sent to all of the flip flops at the same time. The MOD-10 synchronous counter is built with both analogue and digital circuitry. The analogue circuitry consists of the astable multivibrator and the AND gate implemented in CMOS. The astable multivibrator is built by cascading three inverters and using a resistor and capacitor to generate a pulse signal for the clock. The inverters act as a buffer, and the direction of the capacitor's charging and discharging plays an important role in switching the inverter's inputs and outputs. The digital circuitry of MOD - 10 is made up of four JK flipflops with synchronous clear. The truth table is written and reduced using the K-map to obtain the boolean functions for the input and output to the flipflops. Using the Boolean function, the Verilog code for the digital circuit is written. Finally, the analog and digital circuits are integrated to form a mixed signal circuit.
 
 ## Truth Table
 The truth table along with the excitation table for each flipflop is shown below:
+
 | Present State | Next State |J3 | K3 | J2 | K2 | J1 | K1 | J0 | K0 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------ | 
 | **q3 q2 q1 q0** | **Q3 Q2 Q1 Q0** | | | | | | | | |
@@ -58,8 +61,11 @@ The truth table along with the excitation table for each flipflop is shown below
 | 1 1 1 1 | x x x x |  x | x | x | x | x | x | x | x |
 
 J0 = K0 = 1 </br>
+
 J1 = q3'q0  ;  K1 = q0 </br>
+
 J2 = K2 = q0q1 </br>
+
 J3 = q0q1q2  ;  K3 = q0 </br>
 
 ## Software Used
@@ -69,6 +75,7 @@ It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electro
 For more details refer:
 </br>
 https://esim.fossee.in/home
+
 ### NgSpice
 It is an Open Source Software for Spice Simulations. For more details refer:
 </br>
@@ -205,13 +212,12 @@ The following waveforms are the ngspice plots for the designed circuit :
 
 ## Steps to run generate NgVeri Model
 1. Open eSim
-2. Run NgVeri-Makerchip 
+2. Run NgVeri-Makerchip to create a digital block 
 3. Add top level verilog file in Makerchip Tab
-4. Click on NgVeri tab
-5. Add dependency files
-6. Click on Run Verilog to NgSpice Converter
-7. Debug if any errors
-8. Model created successfully
+4. Click on NgVeri tab and add dependency files
+5. Click on Run Verilog to NgSpice Converter
+6. Debug if any errors
+7. Model created successfully
 
 ## Steps to run this project
 1. Open a new terminal
