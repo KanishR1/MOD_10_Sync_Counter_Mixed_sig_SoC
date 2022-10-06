@@ -83,8 +83,10 @@ https://www.veripool.org/verilator/
 ## Circuit Diagram in eSim
 The following is the schematic in eSim:
 ![image](https://user-images.githubusercontent.com/58599984/156439856-079de481-b68d-4955-b9c9-6ff310c5de58.png)
+
 ## Verilog Code
 ![image](https://user-images.githubusercontent.com/58599984/156445908-1af8255c-d17c-4275-8e24-ee65c96af66a.png)
+
 ## Makerchip
 ```
 \TLV_version 1d: tl-x.org
@@ -134,16 +136,35 @@ endmodule
 
 ```
 ## Makerchip Plots
-![image](https://user-images.githubusercontent.com/58599984/156443516-6fdc4420-0bab-40a8-84f4-515966e4f569.png)
+
 
 ## Netlists
-![image](https://user-images.githubusercontent.com/58599984/156440985-0a983124-b5ad-4b60-b83f-7adf0e7c36fb.png)
-## NgSpice Plots
-![image](https://user-images.githubusercontent.com/58599984/156440036-188911e0-9bb2-4d9f-b53d-878f5792d1c6.png)
-![image](https://user-images.githubusercontent.com/58599984/156440082-c3f319ef-3224-4595-85e9-38bae135350f.png)
+The following figures show the contents in the counter_jk_2.cir.out : 
 
-![image](https://user-images.githubusercontent.com/58599984/156439624-353c14ac-4216-4aa7-8207-64f4c287b2b7.png)
-![image](https://user-images.githubusercontent.com/58599984/156439590-9371c62f-384b-42f8-9403-9704429d752d.png)
+![netlist_1](https://user-images.githubusercontent.com/88330171/194203821-86b8b6b9-7eb3-4bab-aab8-5f27deedf52c.png)</br>
+
+![netlist_2](https://user-images.githubusercontent.com/88330171/194203826-79b94e11-d0e3-4eae-a166-4bbf140df64e.png)</br>
+
+![netlist_3](https://user-images.githubusercontent.com/88330171/194203830-b852a7cd-acb3-48c8-9e50-8fed9f70f322.png)</br>
+
+
+## NgSpice Plots
+The following waveforms are the ngspice plots for the designed circuit :
+
+**Clear Signal**
+![Clear](https://user-images.githubusercontent.com/88330171/194203790-6e82ce67-1202-489e-a659-63502bcd9b68.png)
+**Clock Signal**
+![Clock](https://user-images.githubusercontent.com/88330171/194203796-50213481-34fe-473f-a712-0240bf60a490.png)
+**Q0 Output**
+![V0](https://user-images.githubusercontent.com/88330171/194203807-6f3ac675-b99d-447c-8597-1fd9fcf45c29.png)
+**Q1 Output**
+![V1](https://user-images.githubusercontent.com/88330171/194203811-6249d4cb-b238-4acc-89f3-1cb4de743a11.png)
+**Q2 Output**
+![V2](https://user-images.githubusercontent.com/88330171/194203816-00e7ffdb-318b-4244-b0ea-174159930ed0.png)
+**Q3 Output**
+![V3](https://user-images.githubusercontent.com/88330171/194203817-c58e6c1f-f3aa-403e-b111-c932141442c3.png)
+**Combined Waveform**
+![ng_spice](https://user-images.githubusercontent.com/88330171/194203837-6d4b0ee1-72b1-4728-b616-96b97f78b0a8.png)
 
 ## Steps to run generate NgVeri Model
 1. Open eSim
@@ -154,6 +175,7 @@ endmodule
 6. Click on Run Verilog to NgSpice Converter
 7. Debug if any errors
 8. Model created successfully
+
 ## Steps to run this project
 1. Open a new terminal
 2. Clone this project using the following command:</br>
