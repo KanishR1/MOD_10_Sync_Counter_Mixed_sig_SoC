@@ -17,6 +17,7 @@
 - [Makerchip Plots](#makerchip-plots)
 - [Netlists](#netlists)
 - [NgSpice Plots](#ngspice-plots)
+- [GAW Plot](#gaw-plot)
 - [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
 - [Steps to run this project](#steps-to-run-this-project)
 - [Acknowlegdements](#acknowlegdements)
@@ -193,7 +194,8 @@ The following figures show the contents in the counter_jk_2.cir.out :
 ![netlist_3](https://user-images.githubusercontent.com/88330171/194203830-b852a7cd-acb3-48c8-9e50-8fed9f70f322.png)</br>
 
 
-## NgSpice Plots
+## NgSpice Plots![panel](https://user-images.githubusercontent.com/88330171/194677143-ef4e1f53-b7c3-46d0-bcc6-09109b81392c.png)
+
 The following waveforms are the ngspice plots for the designed circuit :
 
 **Clear Signal**
@@ -210,6 +212,10 @@ The following waveforms are the ngspice plots for the designed circuit :
 ![V3](https://user-images.githubusercontent.com/88330171/194203817-c58e6c1f-f3aa-403e-b111-c932141442c3.png)
 **Combined Waveform** </br>
 ![ng_spice](https://user-images.githubusercontent.com/88330171/194203837-6d4b0ee1-72b1-4728-b616-96b97f78b0a8.png)
+
+## GAW Plot
+
+![panel](https://user-images.githubusercontent.com/88330171/194677143-ef4e1f53-b7c3-46d0-bcc6-09109b81392c.png)
 
 ## Steps to run generate NgVeri Model
 1. Open eSim
